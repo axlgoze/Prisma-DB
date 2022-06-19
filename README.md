@@ -47,6 +47,8 @@ model explorador {
 ```
 - versionamiento de cambios en la db (migrations)
 
-ejecutar `npx prisma migrate dev --name init`
+Ejecutar `npx prisma migrate dev --name init`
 
+![newMigration](./images/secondMigration.JPG)
 
+![sql](./images/secondMsql.JPG)
