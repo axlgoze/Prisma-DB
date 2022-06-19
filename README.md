@@ -43,6 +43,8 @@ model explorador {
   missionCommander String @db.VarChar(255)
   enrollments String @db.VarChar(255)
   hasCertification Boolean @default(false)
+//  dateCreated DateTime @default(now())
+//  lastUpdated DateTime @updatedAt
 }
 ```
 - versionamiento de cambios en la db (migrations)
@@ -52,3 +54,55 @@ Ejecutar `npx prisma migrate dev --name init`
 ![newMigration](./images/secondMigration.JPG)
 
 ![sql](./images/secondMsql.JPG)
+
+
+Crear un archivo para insertar datos de forma automatizada:
+`prisma/seed.js`
+
+```javascript
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+(async function main() {
+  try {
+    const explorador = await prisma.explorador.upsert({
+      where: { name: 'Explorador' },
+      update: {},
+      create: {
+        name: 'Explorador',
+				lang: 'Espaniol',
+				missionCommander: 'Carlo',
+				enrollments: 'node'
+      },
+    });
+    const explorador1 = await prisma.explorador.upsert({
+      where: { name: 'Explorador1' },
+      update: {},
+      create: {
+        name: 'Explorardor1',
+				name: 'Explorador1',
+				lang: 'Ingles',
+				missionCommander: 'Fer',
+				enrollments: 'java'
+      },
+    });
+    const explorador2 = await prisma.explorador.upsert({
+      where: { name: 'Explorador2' },
+      update: {},
+      create: {
+        name: 'Explorador2',
+				name: 'Explorador2',
+				lang: 'Frances'
+				missionCommander: 'Luis',
+				enrollments: 'frontEnd'
+      },
+    });
+    console.log('Create 3 exploradores');
+  } catch(e) {
+    console.error(e);
+    process.exit(1);
+  } finally {
+    await prisma.$disconnect();
+  }
+})();
+```
+
