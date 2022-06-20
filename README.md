@@ -105,7 +105,30 @@ const prisma = new PrismaClient();
   }
 })();
 ```
-
+ejecutamos `node prisma/seed.js`
 verificamos que se hayan creado nuestros nuevos registros:
 
 ![registros](./images/registrosSeed.JPG)
+
+## CRUD
+
+Creamos un servidor básico:
+
+``` javascript
+const express = require('express');
+const app = express();
+app.use(express.json());
+const port = process.env.PORT || 3000;
+// Require para usar Prisma
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+app.get('/', (req, res) => {
+  res.json({message: 'ESTA VIVO !'});
+});
+app.listen(port, () => {
+  console.log(`Listening to requests on port ${port}`);
+});
+```
+- Corre el server `node server.js` y accede a `localhost:3000`, verifica que recibas un mensaje.
+
+
