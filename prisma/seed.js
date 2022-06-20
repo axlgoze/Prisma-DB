@@ -3,6 +3,49 @@ const prisma = new PrismaClient();
 
 (async function main() {
   try {
+    const explorador = await prisma.explorador.upsert({
+      where: { name: 'Explorador' },
+      update: {},
+      create: {
+        name: 'Explorador',
+				lang: 'Espaniol',
+				missionCommander: 'Carlo',
+				enrollments: 'node'
+      },
+    });
+    const explorador1 = await prisma.explorador.upsert({
+      where: { name: 'Explorador1' },
+      update: {},
+      create: {
+        name: 'Explorardor1',
+				name: 'Explorador1',
+				lang: 'Ingles',
+				missionCommander: 'Fer',
+				enrollments: 'java'
+      },
+    });
+    const explorador2 = await prisma.explorador.upsert({
+      where: { name: 'Explorador2' },
+      update: {},
+      create: {
+        name: 'Explorador2',
+				name: 'Explorador2',
+				lang: 'Frances'
+				missionCommander: 'Luis',
+				enrollments: 'frontEnd'
+      },
+    });
+    console.log('Create 3 exploradores');
+  } catch(e) {
+    console.error(e);
+    process.exit(1);
+  } finally {
+    await prisma.$disconnect();
+  }
+})();
+/*
+(async function main() {
+  try {
     const woopa = await prisma.explorer.upsert({
       where: { name: 'Woopa' },
       update: {},
@@ -62,3 +105,4 @@ const prisma = new PrismaClient();
     await prisma.$disconnect();
   }
 })();
+*/
