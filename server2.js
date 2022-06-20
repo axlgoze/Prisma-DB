@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 app.get('/', (req, res) => {
-  res.json({message: 'I"ts alive !'});
+  res.json({message: 'ESTA VIVO'});
 });
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);

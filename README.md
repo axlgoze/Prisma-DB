@@ -131,4 +131,10 @@ app.listen(port, () => {
 ```
 - Corre el server `node server.js` y accede a `localhost:3000`, verifica que recibas un mensaje.
 
+3. Crea un CRUD para esta tabla (explorador) en el archivo `server2.js`:
+  - Crea un endpoint GET para regresar todos los registros.
+  - Crea un endpoint GET para regresar el registro dado el ID
+  - Crea un endpoint POST para crear un nuevo registro
+  - Crea un endpoint PUT para actualizar un registro
+  - Crea un endpoint DELETE para eliminar un registro
 
