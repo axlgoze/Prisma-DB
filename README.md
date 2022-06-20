@@ -106,3 +106,6 @@ const prisma = new PrismaClient();
 })();
 ```
 
+verificamos que se hayan creado nuestros nuevos registros:
+
+![registros](./images/registrosSeed.JPG)

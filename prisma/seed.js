@@ -30,7 +30,7 @@ const prisma = new PrismaClient();
       create: {
         name: 'Explorador2',
 				name: 'Explorador2',
-				lang: 'Frances'
+				lang: 'Frances',
 				missionCommander: 'Luis',
 				enrollments: 'frontEnd'
       },
