@@ -36,6 +36,21 @@ app.post('/exploradores', async (req,res)=>{
   return res.json({message});
 });
 
+//PUT para actualizar enrollments by ID
+app.put('/exploradores/:id', async (req,res)=>{
+  const id = parseInt(req.params.id);
+  await prisma.explorador.update({
+    where: {
+    	id: id
+    },
+    data:{
+    	enrollments: req.body.enrollments
+    }
+  })
+  return res.json({message: "Actualizado correctamente"});
+});
+
+
 
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
