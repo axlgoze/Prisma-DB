@@ -8,6 +8,14 @@ const prisma = new PrismaClient();
 app.get('/', (req, res) => {
   res.json({message: 'ESTA VIVO'});
 });
+
+//endpoint GET para regresar todos los exploradores
+app.get('/exploradores', async (req,res)=>{
+  const allExploradores = await prisma.explorador.findMany({});
+  res.json(allExploradores);
+});
+
+
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
