@@ -23,8 +23,17 @@ app.get('/exploradores/:id', async (req,res)=>{
 });
 
 //POST para crear nuevo registro
-app.get('',(req,res)=>{
-
+app.post('/exploradores', async (req,res)=>{
+  const explorador = {
+  name: req.body.name,
+  lang: req.body.lang,
+  missionCommander: req.body.missionCommander,
+  enrollments: req.body.enrollments,
+  hasCertification: true
+  };
+  const message = 'Explorador creado.';
+  await prisma.explorador.create({data: explorador});
+  return res.json({message});
 });
 
 
