@@ -58,6 +58,14 @@ app.delete('/exploradores/:id', async (req,res)=>{
 });
 
 
+//cors
+const cors = require("cors");
+const corsOptions = {
+	origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
+
 app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
