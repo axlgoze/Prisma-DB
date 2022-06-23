@@ -129,12 +129,19 @@ app.listen(port, () => {
   console.log(`Listening to requests on port ${port}`);
 });
 ```
-- Corre el server `node server.js` y accede a `localhost:3000`, verifica que recibas un mensaje.
+- Corre el server `node server2.js` y accede a `localhost:3000`, verifica que recibas un mensaje.
 
 3. Crea un CRUD para esta tabla (explorador) en el archivo `server2.js`:
   - Crea un endpoint GET para regresar todos los registros.
+![GETall](./images/endpointGetAll.JPG)
   - Crea un endpoint GET para regresar el registro dado el ID
+![GETbyID](./images/endpointGetByID.JPG)
   - Crea un endpoint POST para crear un nuevo registro
+![POSTman](./images/endpointPostman.JPG)
+![POSTpos](./images/endpointPostPos.JPG)
   - Crea un endpoint PUT para actualizar un registro
+![before](./images/beforePut.JPG)
+![POSTpos](./images/afterPut.JPG)
   - Crea un endpoint DELETE para eliminar un registro
+![POSTpos](./images/deleted.JPG)
 
