@@ -145,3 +145,33 @@ app.listen(port, () => {
   - Crea un endpoint DELETE para eliminar un registro
 ![POSTpos](./images/deleted.JPG)
 
+---
+
+# Actividad 
+
+1. Revisa la app del front, es una app de Vue 3
+2. La dependencia `Axios` nos permite realizar las peticiones HTTP al server, investiga cómo funciona. Lee el archivo `src/http-common.js`.
+3. Ve al archivo `src/services/ExplorerService.js`
+4. En la carpeta `components` están los componentes usados de Vue: template y script.
+5. Realiza un diagrama de cómo funciona este proyecto de Vue JS, incluye cómo funciona el `router.js`, los templates, los services y los componentes. 
+6. Este diagrama te servirá más adelante para comenzar a agregar nuevos features en este proyecto. Esta actividad tiene por propósito leer una app legada de frontend.
+7. Incluye estos diagramas en tu fork. 
+
+# Nuevo Feature Fullstack
+
+`missionCommander`
+| Campo | Tipo |
+|---|---|
+| id | Integer (autogenerado) |
+| name | String |
+| username | String |
+| mainStack | String |
+| currentEnrollment | Boolean |
+| hasAzureCertification | Boolean |
+
+1. Crea la tabla nueva anterior. Agrega unos registros por medio de los seeds.
+2. Crea un CRUD expuesto en un API en el `server.js` (métodos GET, POST, PUT, DELETE, recuerda que el método GET deberá tener 2 endpoints, uno para traer todos los registros y otro para consultar solo el registro por ID).
+3. En la pantalla inicial del front, consulta todos los registros en esta tabla y muéstralos. Tú decides el diseño.
+4. Agrega la posibilidad de agregar uno nuevo.
+5. Agrega la posibilidad de editar el `mainStack`.
+6. Agrega la posibilidad de eliminar el registro.
